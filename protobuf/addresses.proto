@@ -1,0 +1,21 @@
+message AddressBook {
+    required string title = 1;
+    repeated Entry entries = 2;
+}
+
+message Entry {
+    required string name = 1;
+    required int32 age = 2;
+    optional Address address = 3;
+}
+
+message Address {
+    required string line1 = 2;
+    optional string line2 = 3;
+    optional string line3 = 4;
+    optional string city = 5;
+    optional string region = 8;
+    optional string country = 6;
+    optional string postcode = 9;
+    optional bool deleted = 7;
+}

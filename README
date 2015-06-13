@@ -8,3 +8,5 @@ Recommended Python packages for debian-based systems:
 
     python-psycopg2
     python-cryptography
+    python-protobuf
+    protobuf-compiler

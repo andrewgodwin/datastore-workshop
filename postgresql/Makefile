@@ -7,7 +7,7 @@ start:
 	docker run --name postgresql -d workshop/postgresql
 
 stop:
-	docker rm -f postgresql
+	docker rm -f -v postgresql
 
 getip:
 	docker inspect postgresql | grep IPAddress
