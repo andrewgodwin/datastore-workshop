@@ -29,15 +29,8 @@ RUN sed -i.bak 's/listener.http.internal = 127.0.0.1/listener.http.internal = 0.
     echo "javascript.reduce_pool_size = 0" >> /etc/riak/riak.conf && \
     echo "javascript.hook_pool_size = 0" >> /etc/riak/riak.conf
 
-# Make Riak's data and log directories volumes
-VOLUME /var/lib/riak
-VOLUME /var/log/riak
-
 # Open ports for HTTP and Protocol Buffers
 EXPOSE 8098 8087
-
-# Cleanup
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Boot using baseimage init
 CMD ["/sbin/my_init"]
